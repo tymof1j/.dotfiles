@@ -5,7 +5,9 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'mattn/emmet-vim'
 
+Plugin 'https://github.com/ryangwsimmons/vim-MdToPdf'
 Plugin 'ellisonleao/glow.nvim'
 Plugin 'iamcco/markdown-preview.nvim'
 
@@ -17,7 +19,7 @@ Plugin 'tpope/vim-fugitive'
 
 "md
 Plugin 'godlygeek/tabular'
-Plugin 'preservim/vim-markdown'
+" Plugin 'preservim/vim-markdown'
 
 " File Manager inside vim (default on left side):
 Plugin 'scrooloose/nerdtree'
@@ -32,6 +34,7 @@ Plugin 'vim-scripts/AutoComplPop'             "constant pop-up menu with complit
 Plugin 'nvim-lua/popup.nvim'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-telescope/telescope-fzy-native.nvim'
 
 "complitions
 Plugin 'neovim/nvim-lspconfig'
@@ -59,7 +62,7 @@ autocmd VimEnter * :hi normal guibg=000000
 set number relativenumber       " set line numbers relative to caret
 set cursorline                  " highlight cursor line
 set showmatch                   " shows matching brackets
-set nowrap                      " Dont wrap lines
+" set nowrap                      " Dont wrap lines
 set termguicolors
 set background=dark
 colorscheme gruvbox
@@ -110,6 +113,15 @@ set clipboard+=unnamedplus
 
 let mapleader = " "             " Set leader key:
 
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" let g:user_emmet_leader_key=<leader>n
+" let g:user_emmet_expandabbr_key='<Tab>'
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" augroup EmmetSettings
+"   autocmd! FileType html imap <tab> <plug>(emmet-expand-abbr)
+" augroup END
+
 "for fugitive
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
@@ -117,6 +129,7 @@ nmap <leader>gs : G<CR>
 
 
 nnoremap <leader><leader> :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>md
 nnoremap S :%s//g<Left><Left>
 
 map <leader>vr :source %<CR>
@@ -159,6 +172,7 @@ set langmap=фисвуапршолдьтщзйкіегмцчня;abcdefghijklmno
 " autocmd FileType ruby compiler ruby
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 map <Leader>rr :!ruby %<CR>
+map <Leader>rn :!node %<CR>
 map <Leader>r :!python3 %<CR>
 
 
@@ -244,3 +258,18 @@ lua << EOF
 EOF
 
 set nohlsearch                  " disable search highlight
+" python3 -m pip install --user --upgrade pynvim
+let g:python3_host_prog = '/usr/bin/python3' " -- Set python 3 provider
+
+" function SetTabLen(n)
+"     set shiftwidth=a:n
+"     set tabstop=a:n
+" endfunction
+" " default:
+" call SetTabLen(4)
+" " 2 for html & css:
+" autocmd BufReadPost *.html *.css call SetTabLen(2)
+
+" 2 for html & css:
+autocmd BufReadPost *.html *.css set shiftwidth=2
+autocmd BufReadPost *.html *.css set tabstop=2
