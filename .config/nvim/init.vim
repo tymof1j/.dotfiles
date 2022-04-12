@@ -3,54 +3,60 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'mattn/emmet-vim'
+" if vim-plug not installed then install:
+" if VIM: change it to '~/.vim/autoload/plug.vim' in next and nextnext lines
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'https://github.com/ryangwsimmons/vim-MdToPdf'
-Plugin 'ellisonleao/glow.nvim'
-Plugin 'iamcco/markdown-preview.nvim'
+" PLUGINS:
+call plug#begin()
+Plug 'mattn/emmet-vim'
+
+Plug 'ellisonleao/glow.nvim'
+Plug 'iamcco/markdown-preview.nvim'
 
 " Allows to change/add/delete quotes comfy
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Lets use . on plugins operation/complex operations
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
 
 "md
-Plugin 'godlygeek/tabular'
-" Plugin 'preservim/vim-markdown'
+Plug 'godlygeek/tabular'
 
 " File Manager inside vim (default on left side):
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " requires
-Plugin 'kyazdani42/nvim-web-devicons' " for file icons
-Plugin 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
-Plugin 'ThePrimeagen/vim-be-good'             "game from youtuber to train
-Plugin 'vim-scripts/AutoComplPop'             "constant pop-up menu with complitions
+Plug 'ThePrimeagen/vim-be-good'             "game from youtuber to train
+Plug 'vim-scripts/AutoComplPop'             "constant pop-up menu with complitions
 
 " Telescope:
-Plugin 'nvim-lua/popup.nvim'
-Plugin 'nvim-lua/plenary.nvim'
-Plugin 'nvim-telescope/telescope.nvim'
-Plugin 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 "complitions
-Plugin 'neovim/nvim-lspconfig'
-Plugin 'hrsh7th/nvim-cmp'
-Plugin 'hrsh7th/cmp-nvim-lsp'
-Plugin 'sirver/UltiSnips'
-Plugin 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'sirver/UltiSnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
-Plugin 'hrsh7th/cmp-cmdline'
-Plugin 'tpope/vim-commentary'
-Plugin 'jiangmiao/auto-pairs'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
 
 "Color Themes:
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-call vundle#end()            " required
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+call plug#end()
 filetype plugin indent on
 let g:glow_style = '~/dracula.json'
 
@@ -129,16 +135,17 @@ nmap <leader>gs : G<CR>
 
 
 nnoremap <leader><leader> :NERDTreeToggle<CR>
-" nnoremap <leader>n :NERDTreeToggle<CR>md
+
+" find and change to
 nnoremap S :%s//g<Left><Left>
 
 map <leader>vr :source %<CR>
 
 "for MarkdownPreview
 nmap <Leader>m :MarkdownPreview <CR>
-nmap <leader>n :Glow<CR>
-nmap <Leader>mp <Plugin>MarkdownPreviewStop
-"nmap <C-p> <Plugin>MarkdownPreviewToggle
+nmap <leader>mn :Glow<CR>
+nmap <Leader>mp <Plug>MarkdownPreviewStop
+"nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <Leader>o o<Esc>0"_D
@@ -261,15 +268,9 @@ set nohlsearch                  " disable search highlight
 " python3 -m pip install --user --upgrade pynvim
 let g:python3_host_prog = '/usr/bin/python3' " -- Set python 3 provider
 
-" function SetTabLen(n)
-"     set shiftwidth=a:n
-"     set tabstop=a:n
-" endfunction
-" " default:
-" call SetTabLen(4)
-" " 2 for html & css:
-" autocmd BufReadPost *.html *.css call SetTabLen(2)
 
-" 2 for html & css:
-autocmd BufReadPost *.html *.css set shiftwidth=2
-autocmd BufReadPost *.html *.css set tabstop=2
+" tab is 2 spaces for html & css:
+autocmd BufReadPost *.html setlocal shiftwidth=2
+autocmd BufReadPost *.html setlocal tabstop=2
+autocmd BufReadPost *.css setlocal shiftwidth=2
+autocmd BufReadPost *.css setlocal tabstop=2
