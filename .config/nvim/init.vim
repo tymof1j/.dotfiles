@@ -83,7 +83,11 @@ set encoding=utf-8              " use utf-8 encoding
 
 
 autocmd InsertEnter * norm zz
-set autochdir                   " change current dir to file's dir
+
+" i commented the line bellow in order for Telescope to work properly
+" just open vim it directory you need for search and then use your shortcuts as usuall
+" set autochdir                   " change current dir to file's dir
+
 set completeopt-=preview        " dont show preview if using autocomplete
 set laststatus=2                " it controls, when/how to display the status-bar: O=never, 1= {if > than 2 windows}, 2=always
 
@@ -120,13 +124,26 @@ set clipboard+=unnamedplus
 let mapleader = " "             " Set leader key:
 
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-" let g:user_emmet_leader_key=<leader>n
+"l letlplll g:user_emmet_leader_key=<leader>n
 " let g:user_emmet_expandabbr_key='<Tab>'
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " augroup EmmetSettings
-"   autocmd! FileType html imap <tab> <plug>(emmet-expand-abbr)
-" augroup END
+  " autocmd! FileType html imap <tab> <plug>(emmet-expand-abbr)
+
+" for colemak users
+
+" noremap n j
+" noremap e k
+" nnoremap i l
+" nnoremap u i
+" nnoremap k e
+" nnoremap l u
+" nnoremap j n
+" nnoremap dlp dip
+
+" set langmap=dg,ek,fe,gt,il,jy,kn,lu,nj,pr,rs,sd,tf,ui,yo,op,DG,EK,FE,GT,IL,JY,KN,LU,NJ,PR,RS,SD,TF,UI,YO,OP
+
 
 "for fugitive
 nmap <leader>gj :diffget //3<CR>
@@ -170,7 +187,8 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 " use ukr in normal mode:
 set langmap=аf,б\\,,вd,гu,дl,еt,є',ж\\;,зp,иb,іs,ї],йq,кr,лk,мv,нy,оj,пg,рh,сc,тn,уe,фa,х[,цw,чx,шi,щo,ьm,ю.,яz,АF,Б<,ВD,ГU,ДL,ЕT,Є\\",Ж:,ЗP,ИB,ІS,Ї},ЙQ,КR,ЛK,МV,НY,ОJ,ПG,РH,СC,ТN,УE,ФA,Х{,ЦW,ЧX,ШI,ЩO,ЬM,Ю>,ЯZ
-nnoremap псс gcc
+
+" nnoremap псс gcc
 
 "ruby
 " autocmd FileType ruby,eruby,yaml,haml setlocal iskeyword+=?
