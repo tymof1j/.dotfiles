@@ -44,5 +44,16 @@
       ],
       "key": "K"
     }
+  ],
+  "app:go-back": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod",
+        "Shift"
+      ],
+      "key": "B"
+    }
   ]
 }
