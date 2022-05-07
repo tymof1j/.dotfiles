@@ -1,0 +1,23 @@
+{
+  "hotkeys": [
+    {
+      "sequence": [
+        {
+          "key": " ",
+          "shift": false,
+          "alt": false,
+          "ctrl": false,
+          "meta": false
+        },
+        {
+          "key": "m",
+          "shift": false,
+          "alt": false,
+          "ctrl": false,
+          "meta": false
+        }
+      ],
+      "commandID": "workspace:copy-path"
+    }
+  ]
+}

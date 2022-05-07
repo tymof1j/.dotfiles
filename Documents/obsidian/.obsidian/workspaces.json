@@ -1,0 +1,138 @@
+{
+  "workspaces": {
+    "number 1": {
+      "main": {
+        "id": "905466d122b7f3b7",
+        "type": "split",
+        "children": [
+          {
+            "id": "0adb56cd291ac45c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily review/06-05-2022.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "fb075002141800ef",
+        "type": "split",
+        "children": [
+          {
+            "id": "a7d9ab579903a485",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "24eb9bb33551ef02",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "96cc833e9d74b34a",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "h",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "4d771490f43bba83",
+        "type": "split",
+        "children": [
+          {
+            "id": "e0b477c85606c892",
+            "type": "tabs",
+            "dimension": 60.77777777777777,
+            "children": [
+              {
+                "id": "1974e29ab6c56a58",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "daily review/06-05-2022.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "78f6c73feef1dd36",
+            "type": "tabs",
+            "dimension": 39.22222222222223,
+            "children": [
+              {
+                "id": "277a8f7065ddd9a2",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "daily review/06-05-2022.md",
+                    "options": {
+                      "collapse-filter": true,
+                      "search": "",
+                      "localJumps": 1,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": false,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 1,
+                      "close": true
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 241.5
+      },
+      "active": "0adb56cd291ac45c"
+    }
+  },
+  "active": "number 1"
+}
