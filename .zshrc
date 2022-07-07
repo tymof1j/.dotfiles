@@ -45,3 +45,4 @@ antigen apply
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias n='nvim'
 alias stt='speedtest'
+export PATH=/opt/homebrew/bin:$PATH
