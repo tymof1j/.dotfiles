@@ -13,6 +13,9 @@ endif
 
 " PLUGINS:
 call plug#begin()
+" github copilot
+" Plug 'github/copilot.vim'
+
 Plug 'mattn/emmet-vim'
 
 Plug 'ellisonleao/glow.nvim'
@@ -146,8 +149,8 @@ let mapleader = " "             " Set leader key:
 
 
 "for fugitive
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
+nmap <leader>gn :diffget //3<CR>
+nmap <leader>gt :diffget //2<CR>
 nmap <leader>gs : G<CR>
 
 
@@ -187,6 +190,7 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 " use ukr in normal mode:
 set langmap=аf,б\\,,вd,гu,дl,еt,є',ж\\;,зp,иb,іs,ї],йq,кr,лk,мv,нy,оj,пg,рh,сc,тn,уe,фa,х[,цw,чx,шi,щo,ьm,ю.,яz,АF,Б<,ВD,ГU,ДL,ЕT,Є\\",Ж:,ЗP,ИB,ІS,Ї},ЙQ,КR,ЛK,МV,НY,ОJ,ПG,РH,СC,ТN,УE,ФA,Х{,ЦW,ЧX,ШI,ЩO,ЬM,Ю>,ЯZ
+" use urk in normal mode after you got used to colemak layout
 
 " nnoremap псс gcc
 
