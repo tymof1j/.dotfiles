@@ -16,6 +16,9 @@ call plug#begin()
 " github copilot
 " Plug 'github/copilot.vim'
 
+" dima's work:
+Plug 'dmyTRUEk/argument-text-object'
+
 Plug 'mattn/emmet-vim'
 
 Plug 'ellisonleao/glow.nvim'
