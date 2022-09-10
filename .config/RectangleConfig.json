@@ -178,7 +178,7 @@
   },
   "shortcuts" : {
     "bottomHalf" : {
-      "keyCode" : 125,
+      "keyCode" : 16,
       "modifierFlags" : 1310720
     },
     "centerThird" : {
@@ -202,7 +202,7 @@
       "modifierFlags" : 786432
     },
     "leftHalf" : {
-      "keyCode" : 123,
+      "keyCode" : 4,
       "modifierFlags" : 1310720
     },
     "maximize" : {
@@ -210,11 +210,11 @@
       "modifierFlags" : 1310720
     },
     "rightHalf" : {
-      "keyCode" : 124,
+      "keyCode" : 32,
       "modifierFlags" : 1310720
     },
     "topHalf" : {
-      "keyCode" : 126,
+      "keyCode" : 45,
       "modifierFlags" : 1310720
     }
   },
