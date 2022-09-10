@@ -155,6 +155,9 @@ let mapleader = " "             " Set leader key:
 nmap <leader>gn :diffget //3<CR>
 nmap <leader>gt :diffget //2<CR>
 nmap <leader>gs : G<CR>
+nmap <leader>gl : G log<CR>
+nmap <leader>gc : G commit<CR>
+nmap <leader>gp : G push<CR>
 
 
 nnoremap <leader><leader> :NERDTreeToggle<CR>
