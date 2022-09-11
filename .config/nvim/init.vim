@@ -1,4 +1,3 @@
-" PLUGINS:
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -24,7 +23,6 @@ Plug 'dmyTRUEk/argument-text-object'
 
 Plug 'mattn/emmet-vim'
 
-Plug 'ellisonleao/glow.nvim'
 Plug 'iamcco/markdown-preview.nvim'
 
 " Allows to change/add/delete quotes comfy
@@ -38,9 +36,6 @@ Plug 'godlygeek/tabular'
 
 " File Manager inside vim (default on left side):
 Plug 'scrooloose/nerdtree'
-" requires
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'ThePrimeagen/vim-be-good'             "game from youtuber to train
 Plug 'vim-scripts/AutoComplPop'             "constant pop-up menu with complitions
@@ -62,18 +57,21 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 
-"Color Themes:
+" Color Themes:
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 call plug#end()
+
 filetype plugin indent on
 let g:glow_style = '~/dracula.json'
 
-"design decision
+" DESIGN DECISION:
 set nofoldenable                " disable folding
 syntax enable                   " highlight syntax
+
+" becoming transperent on start
 autocmd VimEnter * :hi normal guibg=000000  
-"becoming transperent on start
+
 set number relativenumber       " set line numbers relative to caret
 set cursorline                  " highlight cursor line
 set showmatch                   " shows matching brackets
@@ -231,7 +229,7 @@ set langmap=аf,б\\,,вd,гu,дl,еt,є',ж\\;,зp,иb,іs,ї],йq,кr,лk,мv,
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 map <Leader>rr :!ruby %<CR>
 map <Leader>rn :!node %<CR>
-map <Leader>r :!python3 %<CR>
+map <Leader>rp :!python3 %<CR>
 
 
 "function for complition to work
