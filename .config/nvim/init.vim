@@ -16,6 +16,9 @@ call plug#begin()
 " github copilot
 " Plug 'github/copilot.vim'
 
+" toggle between fullscreen and recover
+Plug 'szw/vim-maximizer'
+
 " dima's work:
 Plug 'dmyTRUEk/argument-text-object'
 
@@ -150,8 +153,9 @@ let mapleader = " "             " Set leader key:
 
 " set langmap=dg,ek,fe,gt,il,jy,kn,lu,nj,pr,rs,sd,tf,ui,yo,op,DG,EK,FE,GT,IL,JY,KN,LU,NJ,PR,RS,SD,TF,UI,YO,OP
 
+" REMAPS:
 
-"for fugitive
+" for fugitive
 nmap <leader>gn :diffget //3<CR>
 nmap <leader>gt :diffget //2<CR>
 nmap <leader>gs : G<CR>
@@ -159,12 +163,27 @@ nmap <leader>gl : G log<CR>
 nmap <leader>gc : G commit<CR>
 nmap <leader>gp : G push<CR>
 
+" for tabs
+" create a tab using `tn`
+nnoremap tn :tabnew<CR>
+" go to previous tab, simply a change from gT
+nnoremap tg :tabprev<CR>
+" close all tabs exept current
+nnoremap to :tabo<CR>
 
+" for splits
+" toggle maxsize for split/recover
+nnoremap mm :MaximizerToggle<CR>
+" equelize size of splits
+nnoremap <leader>eq <C-w>=
+
+" for Nerd Tree
 nnoremap <leader><leader> :NERDTreeToggle<CR>
 
-" find and change to
+" find and replace to
 nnoremap S :%s//g<Left><Left>
 
+" source config if you are currently viewing him
 map <leader>vr :source %<CR>
 
 "for MarkdownPreview
@@ -176,10 +195,13 @@ nmap <Leader>mp <Plug>MarkdownPreviewStop
 " Quickly insert an empty new line without entering insert mode
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
-" Save (Write) file:
+
+" saving spesific
+" save (write) file:
 nnoremap <leader>w :w <CR>
-" Save All and Quit All:
+" save all and quit all:
 nnoremap <leader>A :wqa <CR>
+
 " move between windows inside vim:
 nnoremap <leader>h :wincmd h <CR>
 nnoremap <leader>j :wincmd j <CR>
