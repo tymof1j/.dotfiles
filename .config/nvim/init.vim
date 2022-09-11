@@ -90,6 +90,8 @@ filetype plugin indent on       " turns on 'detection', 'plugin' and 'indent' at
 set noswapfile
 set encoding=utf-8              " use utf-8 encoding
 
+" force new splits to open to the right/down. thats a logical place to expect them)
+set splitbelow splitright
 
 autocmd InsertEnter * norm zz
 
