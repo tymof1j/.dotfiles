@@ -59,13 +59,65 @@ Plug 'jiangmiao/auto-pairs'
 
 " Color Themes:
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
+" faster then vim-airline
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 filetype plugin indent on
 let g:glow_style = '~/dracula.json'
 
 " DESIGN DECISION:
+
+" for future
+    " component_separators = { left = '|', right = '|'},
+    " section_separators = { left = '', right = ''},
+" setting up a lualine
+lua << END
+ require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'seoul256',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff',
+    {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+    lualine_c = {'filename'},
+    lualine_x = {'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
+END
+
 set nofoldenable                " disable folding
 syntax enable                   " highlight syntax
 
@@ -173,7 +225,7 @@ nnoremap to :tabo<CR>
 
 " for splits
 " toggle maxsize for split/recover
-nnoremap mm :MaximizerToggle<CR>
+nnoremap <leader>mm :MaximizerToggle<CR>
 " equelize size of splits
 nnoremap <leader>eq <C-w>=
 
