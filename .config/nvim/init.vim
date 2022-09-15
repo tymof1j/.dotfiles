@@ -218,6 +218,7 @@ nmap <leader>gp : G push<CR>
 " for tabs
 " create a tab using `tn`
 nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
 " go to previous tab, simply a change from gT
 nnoremap tg :tabprev<CR>
 " close all tabs exept current
