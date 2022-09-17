@@ -168,7 +168,7 @@ set autoindent                  " set tabs automatically, when starting new line
 
 
 "smth ab auto complete
-set complete+=kspell
+" set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c                " hidding status bar 'insert ...'
 "set wildmenu                    " opportunity to have complitions in cmd mode with Tab
@@ -206,6 +206,9 @@ let mapleader = " "             " Set leader key:
 " set langmap=dg,ek,fe,gt,il,jy,kn,lu,nj,pr,rs,sd,tf,ui,yo,op,DG,EK,FE,GT,IL,JY,KN,LU,NJ,PR,RS,SD,TF,UI,YO,OP
 
 " REMAPS:
+
+" Toggle spell check
+map <leader>c :setlocal spell!<CR>
 
 " for fugitive
 nmap <leader>gn :diffget //3<CR>
