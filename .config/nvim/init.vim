@@ -40,6 +40,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ThePrimeagen/vim-be-good'             "game from youtuber to train
 Plug 'vim-scripts/AutoComplPop'             "constant pop-up menu with complitions
 
+" Ruby on Rails tools
+Plug 'tpope/vim-rails'
+
 " Telescope:
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -382,6 +385,29 @@ let g:python3_host_prog = '/usr/bin/python3' " -- Set python 3 provider
 " config files
 let g:AutoPairsMapCh = 0
 let g:AutoPairsMultilineClose = 0
+
+" setting up rails-vim plug so :A would jump me to the right test
+" file(/requests not /controllers)
+let g:rails_projections = {
+      \  "app/controllers/*_controller.rb": {
+      \      "test": [
+      \        "spec/requests/{}_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \      "alternate": [
+      \        "spec/requests/{}_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \   },
+      \   "spec/requests/*_spec.rb": {
+      \      "command": "request",
+      \      "alternate": "app/controllers/{}_controller.rb",
+      \      "template": "require 'rails_helper'\n\n" .
+      \        "RSpec.describe '{}' do\nend",
+      \   },
+      \ }
 
 
 " tab is 2 spaces for html & css:
