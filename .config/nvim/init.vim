@@ -124,6 +124,10 @@ syntax enable                   " highlight syntax
 " becoming transperent on start
 autocmd VimEnter * :hi normal guibg=000000  
 
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+
 set number relativenumber       " set line numbers relative to caret
 set cursorline                  " highlight cursor line
 set showmatch                   " shows matching brackets
@@ -167,8 +171,9 @@ set expandtab                   " use spaces instead of tabs
 set autoindent                  " set tabs automatically, when starting new line
 
 
-"smth ab auto complete
-" set complete+=kspell
+" Enable dictionary auto-completion
+set complete+=kspell
+
 set completeopt=menuone,longest
 set shortmess+=c                " hidding status bar 'insert ...'
 "set wildmenu                    " opportunity to have complitions in cmd mode with Tab
@@ -372,6 +377,11 @@ EOF
 set nohlsearch                  " disable search highlight
 " python3 -m pip install --user --upgrade pynvim
 let g:python3_host_prog = '/usr/bin/python3' " -- Set python 3 provider
+
+" auto-pairs. this fixes the issue with using delete key in insert mode for
+" config files
+let g:AutoPairsMapCh = 0
+let g:AutoPairsMultilineClose = 0
 
 
 " tab is 2 spaces for html & css:
