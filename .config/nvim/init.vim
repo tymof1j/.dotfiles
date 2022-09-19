@@ -1,7 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 " if vim-plug not installed then install:
 " if VIM: change it to '~/.vim/autoload/plug.vim' in next and nextnext lines
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -14,6 +13,8 @@ endif
 call plug#begin()
 " github copilot
 " Plug 'github/copilot.vim'
+
+Plug 'easymotion/vim-easymotion'
 
 " toggle between fullscreen and recover
 Plug 'szw/vim-maximizer'
@@ -38,7 +39,7 @@ Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdtree'
 
 Plug 'ThePrimeagen/vim-be-good'             "game from youtuber to train
-Plug 'vim-scripts/AutoComplPop'             "constant pop-up menu with complitions
+Plug 'iim-scripts/AutoComplPop'             "constant pop-up menu with completions
 
 " Ruby on Rails tools
 Plug 'tpope/vim-rails'
@@ -49,7 +50,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-"complitions
+"completions
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -62,7 +63,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " Color Themes:
 Plug 'morhetz/gruvbox'
-" Plug 'vim-airline/vim-airline'
 " faster then vim-airline
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -73,10 +73,13 @@ let g:glow_style = '~/dracula.json'
 
 " DESIGN DECISION:
 
-" for future
+" sometimes laptop can lack support of those cool ones, so you can use simple
+" lines:
     " component_separators = { left = '|', right = '|'},
     " section_separators = { left = '', right = ''},
-" setting up a lualine
+
+
+" setting up a lualine:
 lua << END
  require('lualine').setup {
   options = {
@@ -124,7 +127,7 @@ END
 set nofoldenable                " disable folding
 syntax enable                   " highlight syntax
 
-" becoming transperent on start
+" becoming transparent on start
 autocmd VimEnter * :hi normal guibg=000000  
 
 " Spell-check Markdown files and Git Commit Messages
@@ -134,7 +137,7 @@ autocmd FileType gitcommit setlocal spell
 set number relativenumber       " set line numbers relative to caret
 set cursorline                  " highlight cursor line
 set showmatch                   " shows matching brackets
-" set nowrap                      " Dont wrap lines
+" set nowrap                      " Don't wrap lines
 set termguicolors
 set background=dark
 colorscheme gruvbox
@@ -142,26 +145,24 @@ set colorcolumn=80
 set scrolloff=10
 
 filetype plugin indent on       " turns on 'detection', 'plugin' and 'indent' at once
-" imap jj <Esc> or inoremap jk <esc> but i reccomend Karabiner-elements for
-" mac users. Using it you can remap caps to ESC
 set noswapfile
 set encoding=utf-8              " use utf-8 encoding
 
-" force new splits to open to the right/down. thats a logical place to expect them)
+" force new splits to open to the right/down. that's a logical place to expect them)
 set splitbelow splitright
 
 autocmd InsertEnter * norm zz
 
 " i commented the line bellow in order for Telescope to work properly
-" just open vim it directory you need for search and then use your shortcuts as usuall
+" just open vim it directory you need for search and then use your shortcuts as usual
 " set autochdir                   " change current dir to file's dir
 
-set completeopt-=preview        " dont show preview if using autocomplete
+set completeopt-=preview        " don't show preview if using autocomplete
 set laststatus=2                " it controls, when/how to display the status-bar: O=never, 1= {if > than 2 windows}, 2=always
 
 
 " better search:
-set incsearch                   " show search results immedeatly
+set incsearch                   " show search results immediately
 set hlsearch                    " highlight found
 set ignorecase                  " /word will find 'word' or 'Word' or 'WORD'
 set smartcase                   " 11 When 'ignorecase' and 'smartcase' are both on, if pattern contains an uppercase letter, it is case sensitive, otherwise, it is not. For example, '/The'
@@ -178,42 +179,30 @@ set autoindent                  " set tabs automatically, when starting new line
 set complete+=kspell
 
 set completeopt=menuone,longest
-set shortmess+=c                " hidding status bar 'insert ...'
-"set wildmenu                    " opportunity to have complitions in cmd mode with Tab
+set shortmess+=c                " hiding status bar 'insert ...'
+"set wildmenu                    " opportunity to have completions in cmd mode with Tab
 
 
 "remove ESC delay:
 set timeoutlen=1000
 set ttimeoutlen=0
 
-"use systerm clipboard
+"use system clipboard
 set clipboard+=unnamedplus
 
 
 let mapleader = " "             " Set leader key:
 
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-"l letlplll g:user_emmet_leader_key=<leader>n
-" let g:user_emmet_expandabbr_key='<Tab>'
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-" augroup EmmetSettings
-  " autocmd! FileType html imap <tab> <plug>(emmet-expand-abbr)
-
-" for colemak users
-
-" noremap n j
-" noremap e k
-" nnoremap i l
-" nnoremap u i
-" nnoremap k e
-" nnoremap l u
-" nnoremap j n
-" nnoremap dlp dip
-
-" set langmap=dg,ek,fe,gt,il,jy,kn,lu,nj,pr,rs,sd,tf,ui,yo,op,DG,EK,FE,GT,IL,JY,KN,LU,NJ,PR,RS,SD,TF,UI,YO,OP
-
 " REMAPS:
+
+" setting up easymotion:
+" disable default mappings
+let g:EasyMotion_do_mapping = 0 
+" search for 2 characters in any of your splits
+nmap s <Plug>(easymotion-overwin-f2)
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
 
 " Toggle spell check
 map <leader>c :setlocal spell!<CR>
@@ -232,13 +221,13 @@ nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
 " go to previous tab, simply a change from gT
 nnoremap tg :tabprev<CR>
-" close all tabs exept current
+" close all tabs except current
 nnoremap to :tabo<CR>
 
 " for splits
-" toggle maxsize for split/recover
+" toggle maximize for split/recover
 nnoremap <leader>mm :MaximizerToggle<CR>
-" equelize size of splits
+" equalize size of splits
 nnoremap <leader>eq <C-w>=
 
 " for Nerd Tree
@@ -252,15 +241,13 @@ map <leader>vr :source %<CR>
 
 "for MarkdownPreview
 nmap <Leader>m :MarkdownPreview <CR>
-nmap <leader>mn :Glow<CR>
 nmap <Leader>mp <Plug>MarkdownPreviewStop
-"nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
 
-" saving spesific
+" saving specific
 " save (write) file:
 nnoremap <leader>w :w <CR>
 " save all and quit all:
@@ -280,7 +267,7 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 
 
-" use ukr in normal mode:
+" use ukrainian layout in normal mode:
 set langmap=аf,б\\,,вd,гu,дl,еt,є',ж\\;,зp,иb,іs,ї],йq,кr,лk,мv,нy,оj,пg,рh,сc,тn,уe,фa,х[,цw,чx,шi,щo,ьm,ю.,яz,АF,Б<,ВD,ГU,ДL,ЕT,Є\\",Ж:,ЗP,ИB,ІS,Ї},ЙQ,КR,ЛK,МV,НY,ОJ,ПG,РH,СC,ТN,УE,ФA,Х{,ЦW,ЧX,ШI,ЩO,ЬM,Ю>,ЯZ
 " use urk in normal mode after you got used to colemak layout
 
@@ -296,7 +283,7 @@ map <Leader>rn :!node %<CR>
 map <Leader>rp :!python3 %<CR>
 
 
-"function for complition to work
+"function for completion to work
 set completeopt=menu,menuone,noselect
 
 lua << EOF
