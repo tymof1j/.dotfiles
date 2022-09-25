@@ -19,7 +19,7 @@ Plug 'easymotion/vim-easymotion'
 " toggle between fullscreen and recover
 Plug 'szw/vim-maximizer'
 
-" dima's work:
+" misha's work:
 Plug 'dmyTRUEk/argument-text-object'
 
 Plug 'mattn/emmet-vim'
@@ -44,7 +44,7 @@ Plug 'iim-scripts/AutoComplPop'             "constant pop-up menu with completio
 " Ruby on Rails tools
 Plug 'tpope/vim-rails'
 
-" Telescope:
+" telescope:
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -61,8 +61,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 
-" Color Themes:
+" color Themes:
 Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " faster then vim-airline
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -84,7 +85,7 @@ lua << END
  require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'seoul256',
+    theme = 'tokyonight',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -128,7 +129,7 @@ set nofoldenable                " disable folding
 syntax enable                   " highlight syntax
 
 " becoming transparent on start
-autocmd VimEnter * :hi normal guibg=000000  
+" autocmd VimEnter * :hi normal guibg=000000  
 
 " Spell-check Markdown files and Git Commit Messages
 autocmd FileType markdown setlocal spell
@@ -140,7 +141,8 @@ set showmatch                   " shows matching brackets
 " set nowrap                      " Don't wrap lines
 set termguicolors
 set background=dark
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme tokyonight-moon
 set colorcolumn=80
 set scrolloff=10
 
@@ -261,8 +263,6 @@ nnoremap <leader>l :wincmd l <CR>
 
 
 " Telescope:
-" nnoremap gd        :Telescope lsp_definitions <CR>
-nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>f :Telescope find_files <CR>
 nnoremap <leader>t :Telescope live_grep <CR>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
