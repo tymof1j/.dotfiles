@@ -261,6 +261,8 @@ nnoremap <leader>l :wincmd l <CR>
 
 
 " Telescope:
+" nnoremap gd        :Telescope lsp_definitions <CR>
+nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>f :Telescope find_files <CR>
 nnoremap <leader>t :Telescope live_grep <CR>
 nnoremap <leader>b <cmd>Telescope buffers<cr>

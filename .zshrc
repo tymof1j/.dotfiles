@@ -1,3 +1,6 @@
+# in order to zoxide to work
+eval "$(zoxide init zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -140,8 +143,15 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias n='nvim'
 alias stt='speedtest'
 alias la='ls -a'
+alias f='fortune | lolcat'
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-neofetch
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/timamuravyov/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/timamuravyov/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/timamuravyov/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/timamuravyov/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
