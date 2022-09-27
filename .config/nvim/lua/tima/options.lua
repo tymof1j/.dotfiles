@@ -39,4 +39,4 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd 'autocmd VimEnter * set formatoptions-=ro' -- desables auto commenting on the next line
+-- vim.cmd 'autocmd VimEnter * set formatoptions-=ro' -- desables auto commenting on the next line

@@ -52,5 +52,5 @@ nmap('<leader>j', ':wincmd j <cr>')
 nmap('<leader>k', ':wincmd k <cr>')
 nmap('<leader>l', ':wincmd l <cr>')
 
-nmap('S', '<Plug>(findandreplace_n)')
+-- nmap('S', '<Plug>(findandreplace_n)')
 nmap('<leader>vr', ':source %<CR>') -- source config if you are currently viewing him

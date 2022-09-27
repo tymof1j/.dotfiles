@@ -78,6 +78,9 @@ return packer.startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
 
+    -- Highlighting
+    use 'nvim-treesitter/nvim-treesitter'
+
 
     -- OTHER:
 
