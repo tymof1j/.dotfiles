@@ -64,3 +64,4 @@ nmap('<leader>ev', ':Eview<cr>')
 nmap('<leader>ec', ':Econtroller<cr>')
 nmap('<leader>ea', ':A<cr>')
 nmap('<leader>er', ':R<cr>')
+nmap('<leader>et', ':Rails<cr>') -- run test for selected file
