@@ -102,4 +102,5 @@ return packer.startup(function(use)
 
   -- FUN:
   use 'ThePrimeagen/vim-be-good' -- game from youtuber to train
+  use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
 end)
