@@ -36,7 +36,7 @@ return packer.startup(function(use)
 
 
     -- GENERAL SETUP:
-    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
     use 'easymotion/vim-easymotion'
     use 'scrooloose/nerdtree' -- file manager inside vim (default on left side)
     -- use 'iim-scripts/AutoComplPop' -- constant pop-up menu with completions
