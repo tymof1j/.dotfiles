@@ -5,7 +5,7 @@ filetype off                  " required
 " if VIM: change it to '~/.vim/autoload/plug.vim' in next and nextnext lines
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubPlugrcontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -14,43 +14,14 @@ call plug#begin()
 " github copilot
 " Plug 'github/copilot.vim'
 
+ " GENERAL SETUP:
+Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree' " file manager inside vim (default on left side)
+Plug 'iim-scripts/AutoComplPop' " constant pop-up menu with completions
 
-" toggle between fullscreen and recover
-Plug 'szw/vim-maximizer'
 
-" misha's work:
-Plug 'dmyTRUEk/argument-text-object'
-
-Plug 'mattn/emmet-vim'
-
-Plug 'iamcco/markdown-preview.nvim'
-
-" Allows to change/add/delete quotes comfy
-Plug 'tpope/vim-surround'
-" Lets use . on plugins operation/complex operations
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-
-"md
-Plug 'godlygeek/tabular'
-
-" File Manager inside vim (default on left side):
-Plug 'scrooloose/nerdtree'
-
-Plug 'ThePrimeagen/vim-be-good'             "game from youtuber to train
-Plug 'iim-scripts/AutoComplPop'             "constant pop-up menu with completions
-
-" Ruby on Rails tools
-Plug 'tpope/vim-rails'
-
-" telescope:
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
-"completions
+" LSP:
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -58,23 +29,53 @@ Plug 'sirver/UltiSnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
 
-" color Themes:
+" Telescope:
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+
+" DESIGN:
+
+" Color Schemas
 Plug 'morhetz/gruvbox'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-" faster then vim-airline
+Plug 'folke/tokyonight.nvim'
+
+" Faster then airline
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+
+
+" OTHER:
+
+Plug 'szw/vim-maximizer' " toggle between fullscreen and recover
+Plug 'iamcco/markdown-preview.nvim' " nice render of md files. similar to github
+
+" Tpope's work:
+Plug 'tpope/vim-commentary' " quickly comment/uncomment files
+Plug 'tpope/vim-rails' " Plugful for rails development
+Plug 'tpope/vim-surround' " allows to change/add/delete quotes comfy
+Plug 'tpope/vim-repeat' " lets Plug . on plugins operation/complex operations
+Plug 'tpope/vim-fugitive' " git integrator
+
+" Misha's work:
+Plug 'dmyTRUEk/argument-text-object'
+
+
+" FUN:
+Plug 'ThePrimeagen/vim-be-good' " game from youtuber to train
+
 call plug#end()
+
 
 filetype plugin indent on
 let g:glow_style = '~/dracula.json'
 
 " DESIGN DECISION:
 
-" sometimes laptop can lack support of those cool ones, so you can use simple
+" sometimes laptop can lack support of those cool ones, so you can Plug simple
 " lines:
     " component_separators = { left = '|', right = '|'},
     " section_separators = { left = '', right = ''},
@@ -148,7 +149,7 @@ set scrolloff=10
 
 filetype plugin indent on       " turns on 'detection', 'plugin' and 'indent' at once
 set noswapfile
-set encoding=utf-8              " use utf-8 encoding
+set encoding=utf-8              " Plug utf-8 encoding
 
 " force new splits to open to the right/down. that's a logical place to expect them)
 set splitbelow splitright
@@ -156,7 +157,7 @@ set splitbelow splitright
 autocmd InsertEnter * norm zz
 
 " i commented the line bellow in order for Telescope to work properly
-" just open vim it directory you need for search and then use your shortcuts as usual
+" just open vim it directory you need for search and then Plug your shortcuts as usual
 " set autochdir                   " change current dir to file's dir
 
 set completeopt-=preview        " don't show preview if using autocomplete
@@ -171,9 +172,9 @@ set smartcase                   " 11 When 'ignorecase' and 'smartcase' are both 
 
 
 "'smart ' tabs:
-set tabstop=4                   " when indenting with '>', use 4 spaces width
+set tabstop=4                   " when indenting with '>', Plug 4 spaces width
 set shiftwidth=4                " On pressing tab, insert 4 spaces
-set expandtab                   " use spaces instead of tabs
+set expandtab                   " Plug spaces instead of tabs
 set autoindent                  " set tabs automatically, when starting new line
 
 
@@ -189,7 +190,7 @@ set shortmess+=c                " hiding status bar 'insert ...'
 set timeoutlen=1000
 set ttimeoutlen=0
 
-"use system clipboard
+"Plug system clipboard
 set clipboard+=unnamedplus
 
 
@@ -269,9 +270,9 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 
 
-" use ukrainian layout in normal mode:
+" Plug ukrainian layout in normal mode:
 set langmap=аf,б\\,,вd,гu,дl,еt,є',ж\\;,зp,иb,іs,ї],йq,кr,лk,мv,нy,оj,пg,рh,сc,тn,уe,фa,х[,цw,чx,шi,щo,ьm,ю.,яz,АF,Б<,ВD,ГU,ДL,ЕT,Є\\",Ж:,ЗP,ИB,ІS,Ї},ЙQ,КR,ЛK,МV,НY,ОJ,ПG,РH,СC,ТN,УE,ФA,Х{,ЦW,ЧX,ШI,ЩO,ЬM,Ю>,ЯZ
-" use urk in normal mode after you got used to colemak layout
+" Plug urk in normal mode after you got Plugd to colemak layout
 
 " nnoremap псс gcc
 
@@ -324,32 +325,32 @@ lua << EOF
         sources = {
             { name = 'nvim_lsp' },
             --{ name = 'path' },
-            --{ name = 'vsnip' },   -- For vsnip users.
-            --{ name = 'luasnip' }, -- For luasnip users.
-            { name = 'ultisnips' }, -- For ultisnips users.
-            --{ name = 'snippy' },  -- For snippy users.
+            --{ name = 'vsnip' },   -- For vsnip Plugrs.
+            --{ name = 'luasnip' }, -- For luasnip Plugrs.
+            { name = 'ultisnips' }, -- For ultisnips Plugrs.
+            --{ name = 'snippy' },  -- For snippy Plugrs.
             --TODO: patter -> pattern
             --{ name = 'buffer', option = { keyword_patter = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%([\-.]\w*\)*\|[a-zA-Zа-яА-Я]*\)]] } },
         },
         snippet = {
             -- REQUIRED - you MUST specify a snippet engine
             expand = function(args)
-              --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-              --require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-              vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-              --require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+              --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` Plugrs.
+              --require('luasnip').lsp_expand(args.body) -- For `luasnip` Plugrs.
+              vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` Plugrs.
+              --require'snippy'.expand_snippet(args.body) -- For `snippy` Plugrs.
             end,
         },
     })
 
-    -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+    -- Plug buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
     --cmp.setup.cmdline('/', {
     --  sources = {
     --    { name = 'buffer' }
     --  }
     --})
 
-    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    -- Plug cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     --cmp.setup.cmdline(':', {
     --  sources = cmp.config.sources({
     --    { name = 'path' }
@@ -367,7 +368,7 @@ lua << EOF
 EOF
 
 set nohlsearch                  " disable search highlight
-" python3 -m pip install --user --upgrade pynvim
+" python3 -m pip install --Plugr --upgrade pynvim
 let g:python3_host_prog = '/usr/bin/python3' " -- Set python 3 provider
 
 " auto-pairs. this fixes the issue with using delete key in insert mode for
