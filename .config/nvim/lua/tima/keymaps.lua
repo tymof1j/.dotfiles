@@ -57,3 +57,10 @@ nmap('<leader>vr', ':source %<cr>') -- source config if you are currently viewin
 
 -- formatting
 nmap('<leader>a', ':lua vim.lsp.buf.formatting_sync()<cr>')
+
+-- vim-rails:
+nmap('<leader>em', ':Emodel<cr>')
+nmap('<leader>ev', ':Eview<cr>')
+nmap('<leader>ec', ':Econtroller<cr>')
+nmap('<leader>ea', ':A<cr>')
+nmap('<leader>er', ':R<cr>')
