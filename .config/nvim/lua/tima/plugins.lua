@@ -39,15 +39,25 @@ return packer.startup(function(use)
     use 'jiangmiao/auto-pairs'
     use 'easymotion/vim-easymotion'
     use 'scrooloose/nerdtree' -- file manager inside vim (default on left side)
-    use 'iim-scripts/AutoComplPop' -- constant pop-up menu with completions
+    -- use 'iim-scripts/AutoComplPop' -- constant pop-up menu with completions
 
+    -- cmp plugins:
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lua'
+
+    -- snippets:
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
 
     -- LSP:
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'sirver/UltiSnips'
-    use 'quangnguyen30192/cmp-nvim-ultisnips'
+    use 'williamboman/nvim-lsp-installer'
+    use 'jose-elias-alvarez/null-ls.nvim'
+
 
     use 'hrsh7th/cmp-cmdline'
 
@@ -75,7 +85,8 @@ return packer.startup(function(use)
     use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- nice render of md files. similar to github
 
     -- Tpope's work:
-    use 'tpope/vim-commentary' -- quickly comment/uncomment files
+    use 'tomtom/tcomment_vim' -- quickly comment/uncomment files
+    -- use 'tpope/vim-commentary' -- doesn't seem to work
     use 'tpope/vim-rails' -- useful for rails development
     use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
     use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
