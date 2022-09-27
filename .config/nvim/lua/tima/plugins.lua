@@ -31,75 +31,75 @@ end
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
-    use 'wbthomason/packer.nvim'  -- packer can manage itself
+  -- My plugins here
+  use 'wbthomason/packer.nvim'  -- packer can manage itself
 
 
-    -- GENERAL SETUP:
-    use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
-    use 'easymotion/vim-easymotion'
-    use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
-    -- use 'iim-scripts/AutoComplPop' -- constant pop-up menu with completions
+  -- GENERAL SETUP:
+  use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
+  use 'easymotion/vim-easymotion'
+  use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
+  use 'akinsho/toggleterm.nvim'
 
-    -- cmp plugins:
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-nvim-lua'
+  -- cmp plugins:
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
 
-    -- snippets:
-    use 'L3MON4D3/LuaSnip'
-    use 'rafamadriz/friendly-snippets'
+  -- snippets:
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
 
-    -- LSP:
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
-    use 'jose-elias-alvarez/null-ls.nvim'
-
-
-    use 'hrsh7th/cmp-cmdline'
-
-    -- Telescope:
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-telescope/telescope-fzy-native.nvim'
+  -- LSP:
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
 
-    -- DESIGN:
+  use 'hrsh7th/cmp-cmdline'
 
-    -- Color Schemas
-    use 'morhetz/gruvbox'
-    use 'folke/tokyonight.nvim'
-
-    -- Faster then airline
-    use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-
-    -- Highlighting
-    use 'nvim-treesitter/nvim-treesitter'
+  -- Telescope:
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-fzy-native.nvim'
 
 
-    -- OTHER:
+  -- DESIGN:
 
-    use 'szw/vim-maximizer' -- toggle between fullscreen and recover
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- nice render of md files. similar to github
+  -- Color Schemas
+  use 'morhetz/gruvbox'
+  use 'folke/tokyonight.nvim'
 
-    -- Tpope's work:
-    use 'tomtom/tcomment_vim' -- quickly comment/uncomment files
-    -- use 'tpope/vim-commentary' -- doesn't seem to work
-    use 'tpope/vim-rails' -- useful for rails development
-    use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
-    use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
-    use 'tpope/vim-fugitive' -- git integrator
+  -- Faster then airline
+  use 'nvim-lualine/lualine.nvim'
+  use 'kyazdani42/nvim-web-devicons'
 
-    -- Misha's work:
-    use 'dmyTRUEk/argument-text-object'
-    use 'dmyTRUEk/find-and-replace'
+  -- Highlighting
+  use 'nvim-treesitter/nvim-treesitter'
 
 
-    -- FUN:
-    use 'ThePrimeagen/vim-be-good' -- game from youtuber to train
+  -- OTHER:
+
+  use 'szw/vim-maximizer' -- toggle between fullscreen and recover
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- nice render of md files. similar to github
+
+  -- Tpope's work:
+  use 'tomtom/tcomment_vim' -- quickly comment/uncomment files
+  -- use 'tpope/vim-commentary' -- doesn't seem to work
+  use 'tpope/vim-rails' -- useful for rails development
+  use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
+  use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
+  use 'tpope/vim-fugitive' -- git integrator
+
+  -- Misha's work:
+  use 'dmyTRUEk/argument-text-object'
+  use 'dmyTRUEk/find-and-replace'
+
+
+  -- FUN:
+  use 'ThePrimeagen/vim-be-good' -- game from youtuber to train
 end)
