@@ -43,7 +43,7 @@ nmap('to', ':tabo<cr>')
 
 
 -- for spits
-nmap('<leader>n', ':NERDTreeToggle<cr>') -- nerd tree
+nmap('<leader>n', ':NvimTreeToggle<cr>') -- nerd tree
 nmap('<leader>mm', ':MaximizerToggle<cr>') -- toggle maximize for split/recover
 nmap('<leader>eq', '<C-w>=') -- equalize size of splits
 -- better moving management:
