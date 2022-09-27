@@ -75,7 +75,7 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim'
 
   -- Faster then airline
-  use 'nvim-lualine/lualine.nvim'
+  use 'nvim-lualine/lualine.nvim' -- status line
   use 'kyazdani42/nvim-web-devicons'
 
   -- Highlighting
