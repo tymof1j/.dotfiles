@@ -17,6 +17,10 @@ end
 
 nmap('<leader>w', ':w<cr>')
 
+-- Quickly insert an empty new line without entering insert mode
+nmap('<Leader>o', 'o<Esc>0')
+nmap('<Leader>O', 'O<Esc>0')
+
 -- Toggle spell check
 nmap('<leader>c', ':setlocal spell!<cr>')
 

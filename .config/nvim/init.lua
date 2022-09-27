@@ -11,5 +11,3 @@ require 'tima.nvim_tree'
 require 'tima.toggleterm'
 require 'tima.autocommands'
 require 'tima.rails_projections'
-
-vim.cmd('let g:loaded_ruby_provider = 0')
