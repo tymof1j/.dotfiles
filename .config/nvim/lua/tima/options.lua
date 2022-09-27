@@ -1,10 +1,10 @@
 local options = {
   backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
-  fileencoding = "utf-8",                  -- the encoding written to a file
+  fileencoding = 'utf-8',                  -- the encoding written to a file
   hlsearch = false,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   pumheight = 10,                          -- pop up menu height
@@ -33,8 +33,10 @@ local options = {
   -- guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append 'c'
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.cmd 'autocmd VimEnter * set formatoptions-=ro' -- desables auto commenting on the next line
