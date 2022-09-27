@@ -53,4 +53,7 @@ nmap('<leader>k', ':wincmd k <cr>')
 nmap('<leader>l', ':wincmd l <cr>')
 
 -- nmap('S', '<Plug>(findandreplace_n)')
-nmap('<leader>vr', ':source %<CR>') -- source config if you are currently viewing him
+nmap('<leader>vr', ':source %<cr>') -- source config if you are currently viewing him
+
+-- formatting
+nmap('<leader>a', ':lua vim.lsp.buf.formatting_sync()<cr>')
