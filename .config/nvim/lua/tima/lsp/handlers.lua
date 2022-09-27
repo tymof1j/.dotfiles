@@ -15,7 +15,7 @@ M.setup = function()
 
 	local config = {
 		virtual_text = true,
-		update_in_insert = true,
+		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
 	}

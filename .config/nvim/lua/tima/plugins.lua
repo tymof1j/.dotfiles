@@ -94,6 +94,7 @@ return packer.startup(function(use)
 
     -- Misha's work:
     use 'dmyTRUEk/argument-text-object'
+    use 'dmyTRUEk/find-and-replace'
 
 
     -- FUN:

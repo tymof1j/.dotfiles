@@ -53,4 +53,5 @@ nmap('<leader>k', ':wincmd k <cr>')
 nmap('<leader>l', ':wincmd l <cr>')
 
 nmap('S', ':%s//g<Left><Left>')
+-- nmap('S', )
 nmap('<leader>vr', ':source %<CR>') -- source config if you are currently viewing him
