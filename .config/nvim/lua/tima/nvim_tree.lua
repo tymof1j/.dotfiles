@@ -10,12 +10,13 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup({
+nvim_tree.setup {
   update_focused_file = {
     enable = true,
     update_cwd = true,
   },
   renderer = {
+    group_empty = true,
     root_folder_modifier = ":t",
     icons = {
       glyphs = {
@@ -50,7 +51,8 @@ nvim_tree.setup({
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "u", action = "dir_up" },
       },
     },
   },
-})
+}
