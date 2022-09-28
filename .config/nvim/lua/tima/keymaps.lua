@@ -16,6 +16,7 @@ function imap(shortcut, command)
 end
 
 nmap('<leader>w', ':w<cr>')
+nmap('<leader>md', ':MarkdownPreview<cr>') -- start MarkdownPreview
 
 -- Quickly insert an empty new line without entering insert mode
 nmap('<Leader>o', 'o<Esc>0')
@@ -27,16 +28,16 @@ nmap('<leader>c', ':setlocal spell!<cr>')
 -- for fugitive
 nmap('<leader>gn', ':diffget //3<cr>')
 nmap('<leader>gt', ':diffget //2<cr>')
-nmap('<leader>gs', ': G<cr>')
-nmap('<leader>gl', ': G log<cr>')
-nmap('<leader>gc', ': G commit<cr>')
-nmap('<leader>gp', ': G push<cr>')
+nmap('<leader>gs', ':G<cr>')
+nmap('<leader>gl', ':G log<cr>')
+nmap('<leader>gc', ':G commit<cr>')
+nmap('<leader>gp', ':G push<cr>')
 
 
 -- for telecsope:
-nmap('<leader>f', ':Telescope find_files <cr>')
-nmap('<leader>t', ':Telescope live_grep <cr>')
-nmap('<leader>b', '<cmd>Telescope buffers<cr>')
+nmap('<leader>ff', ':Telescope find_files <cr>')
+nmap('<leader>ft', ':Telescope live_grep <cr>')
+nmap('<leader>fb', ':Telescope buffers<cr>')
 
 
 -- for tabs
@@ -50,6 +51,7 @@ nmap('to', ':tabo<cr>')
 nmap('<leader>n', ':NvimTreeToggle<cr>') -- nerd tree
 nmap('<leader>mm', ':MaximizerToggle<cr>') -- toggle maximize for split/recover
 nmap('<leader>eq', '<C-w>=') -- equalize size of splits
+
 -- better moving management:
 nmap('<leader>h', ':wincmd h <cr>')
 nmap('<leader>j', ':wincmd j <cr>')

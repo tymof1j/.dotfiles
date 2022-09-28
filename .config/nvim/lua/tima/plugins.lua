@@ -92,7 +92,7 @@ return packer.startup(function(use)
   -- OTHER:
 
   use 'szw/vim-maximizer' -- toggle between fullscreen and recover
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- nice render of md files. similar to github
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'} -- nice render of md files. similar to github
 
   -- Tpope's work:
   use 'tomtom/tcomment_vim' -- quickly comment/uncomment files
