@@ -23,6 +23,10 @@ vim.cmd [[
     autocmd FileType markdown setlocal wrap
     autocmd FileType markdown setlocal spell
   augroup end
+
+  augroup _file_run
+    autocmd BufReadPost *.py nnoremap <leader>r :wa <bar> :! python3 % <cr>
+    autocmd BufReadPost *.rb nnoremap <leader>r :wa <bar> :! ruby % <cr>
 ]]
 
 -- visual select every time you yank

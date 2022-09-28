@@ -56,6 +56,8 @@ nmap('<leader>j', ':wincmd j <cr>')
 nmap('<leader>k', ':wincmd k <cr>')
 nmap('<leader>l', ':wincmd l <cr>')
 
+-- nmap('S', '<cmd>%s//g<Left><Left>')
+vim.cmd[[nnoremap S :%s//g<Left><Left>]] -- lua version ⬆️  doesn't seem to work
 -- nmap('S', '<Plug>(findandreplace_n)')
 nmap('s', ':HopChar2MW<cr>') -- to see all possible commands and choose what works for you -> ':Ho', tab and scroll through the results
 nmap('<leader>tv', ':source %<cr>') -- source vim
