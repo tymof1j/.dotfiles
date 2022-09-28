@@ -37,7 +37,14 @@ return packer.startup(function(use)
 
   -- GENERAL SETUP:
   use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
-  use 'easymotion/vim-easymotion'
+  use {
+    'phaazon/hop.nvim', -- lua analog to 'easymotion/vim-easymotion'
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
   use 'akinsho/toggleterm.nvim'
 

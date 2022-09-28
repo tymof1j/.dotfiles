@@ -57,8 +57,9 @@ nmap('<leader>k', ':wincmd k <cr>')
 nmap('<leader>l', ':wincmd l <cr>')
 
 -- nmap('S', '<Plug>(findandreplace_n)')
-nmap('<leader>sv', ':source %<cr>') -- source vim
-nmap('<leader>sl', ':luafile %<cr>') -- source lua
+nmap('s', ':HopChar2MW<cr>') -- to see all possible commands and choose what works for you -> ':Ho', tab and scroll through the results
+nmap('<leader>tv', ':source %<cr>') -- source vim
+nmap('<leader>tl', ':luafile %<cr>') -- source lua
 
 -- formatting
 nmap('<leader>a', ':lua vim.lsp.buf.formatting_sync()<cr>')
