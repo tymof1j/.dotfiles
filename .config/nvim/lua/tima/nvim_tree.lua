@@ -51,6 +51,7 @@ nvim_tree.setup {
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "t", cb = tree_cb "tabnew" },
         { key = "u", action = "dir_up" },
       },
     },
