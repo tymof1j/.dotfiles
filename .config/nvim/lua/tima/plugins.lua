@@ -77,6 +77,11 @@ return packer.startup(function(use)
 
   -- DESIGN:
 
+  use({
+    'catppuccin/nvim',
+    as = 'catppuccin'
+  })
+
   -- Color Schemas
   use 'morhetz/gruvbox'
   use 'folke/tokyonight.nvim'
