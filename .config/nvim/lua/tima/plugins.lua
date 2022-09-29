@@ -77,6 +77,7 @@ return packer.startup(function(use)
 
   -- DESIGN:
 
+  use 'xiyaowong/nvim-transparent'
   -- Color Schemas
   use 'morhetz/gruvbox'
   use 'folke/tokyonight.nvim'
