@@ -1,7 +1,7 @@
 vim.cmd [[
   augroup _general_settings
     autocmd!
-    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
+    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd InsertEnter * norm zz
@@ -29,6 +29,31 @@ vim.cmd [[
     autocmd BufReadPost *.rb nnoremap <leader>r :wa <bar> :! ruby % <cr>
 ]]
 
--- visual select every time you yank
---     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
+-- local file_group = augroup('FileType', {})
+
+-- autocmd({ 'BufRead', 'BufNewFile' }, {
+--   group = file_group,
+--   pattern = { '*.txt', '*.md', '*.gitcommit' },
+--   command = 'setlocal spell'
+-- })
+
+autocmd('BufWritePre', {
+  pattern = "*",
+  command = "%s/\\s\\+$//e"
+})
+
+local yank_group = augroup('HighlightYank', {})
+
+autocmd('TextYankPost', {
+    group = yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40,
+        })
+    end,
+})
