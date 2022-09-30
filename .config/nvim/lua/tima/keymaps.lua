@@ -3,17 +3,25 @@ local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
-function map(mode, shortcut, command)
+local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, opts)
 end
 
-function nmap(shortcut, command)
+local function nmap(shortcut, command)
   map('n', shortcut, command)
 end
 
-function imap(shortcut, command)
+local function vmap(shortcut, command)
+  map('v', shortcut, command)
+end
+
+local function imap(shortcut, command)
   map('i', shortcut, command)
 end
+
+-- Next two remaps allows to move line up and down in visual mode + autoindenting
+vmap("J", ":m '>+1<CR>gv=gv")
+vmap("K", ":m '<-2<CR>gv=gv")
 
 nmap('<leader>w', ':w<cr>')
 nmap('<leader>md', ':MarkdownPreview<cr>') -- start MarkdownPreview

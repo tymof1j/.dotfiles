@@ -46,7 +46,7 @@ return packer.startup(function(use)
     end
   }
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
-  use 'akinsho/toggleterm.nvim'
+  use 'akinsho/toggleterm.nvim' -- alows to open terminal windows on top of your nvim window
 
   -- cmp plugins:
   use 'hrsh7th/nvim-cmp'
