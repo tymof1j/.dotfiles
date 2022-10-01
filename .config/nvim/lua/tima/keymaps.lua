@@ -19,9 +19,16 @@ local function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
+imap('<c-l>', '<right>')
+imap('<c-h>', '<left>')
+
 -- Next two remaps allows to move line up and down in visual mode + autoindenting
-vmap("J", ":m '>+1<CR>gv=gv")
-vmap("K", ":m '<-2<CR>gv=gv")
+vmap('J', ":m '>+1<CR>gv=gv")
+vmap('K', ":m '<-2<CR>gv=gv")
+
+-- Autocentering for half page scroll
+nmap('<C-d>', '<C-d>zz')
+nmap('<C-u>', '<C-u>zz')
 
 nmap('<leader>w', ':w<cr>')
 nmap('<leader>md', ':MarkdownPreview<cr>') -- start MarkdownPreview
@@ -83,3 +90,11 @@ nmap('<leader>ec', ':Econtroller<cr>')
 nmap('<leader>ea', ':A<cr>')
 nmap('<leader>er', ':R<cr>')
 nmap('<leader>et', ':Rails<cr>') -- run test for selected file
+
+-- harpoon:
+nmap('<leader>a', ':lua require("harpoon.mark").add_file()<cr>')
+nmap('<c-l>',':lua require("harpoon.ui").toggle_quick_menu()<cr>')
+
+nmap('<c-n>',':lua require("harpoon.ui").nav_file(1)<cr>')
+nmap('<c-e>',':lua require("harpoon.ui").nav_file(2)<cr>')
+nmap('<c-i>',':lua require("harpoon.ui").nav_file(3)<cr>')
