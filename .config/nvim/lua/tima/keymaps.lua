@@ -19,8 +19,8 @@ local function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
-imap('<c-l>', '<right>')
-imap('<c-h>', '<left>')
+-- imap('<c-l>', '<right>') -- this breaks the backspase key
+-- imap('<c-h>', '<left>')
 
 -- Next two remaps allows to move line up and down in visual mode + autoindenting
 vmap('J', ":m '>+1<CR>gv=gv")
