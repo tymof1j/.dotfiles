@@ -102,13 +102,16 @@ return packer.startup(function(use)
   use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
   use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
   use 'tpope/vim-fugitive' -- git integrator
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- Misha's work:
   use 'dmyTRUEk/argument-text-object'
   use 'dmyTRUEk/find-and-replace'
 
+  -- ThePrimeagen work:
+  use 'ThePrimeagen/harpoon' -- inteligent makrs
+  use 'ThePrimeagen/vim-be-good' -- this is fun, game to train
 
   -- FUN:
-  use 'ThePrimeagen/vim-be-good' -- game from youtuber to train
   use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
 end)
