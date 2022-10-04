@@ -64,6 +64,16 @@ nmap('to', ':tabo<cr>')
 
 -- for spits
 nmap('<leader>n', ':NvimTreeToggle<cr>') -- nerd tree
+-- nmap('<leader>n', ':NERDTreeToggle<cr>') -- nerd tree
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<leader>n",
+--   ":Telescope file_browser<cr>",
+--   { noremap = true }
+-- )
+
+-- nmap('<leader>n', ':Telescope file_browser<cr>') -- nerd tree
+-- nmap('<leader>n', ':Fern .<cr>') -- nerd tree
 nmap('<leader>mm', ':MaximizerToggle<cr>') -- toggle maximize for split/recover
 nmap('<leader>eq', '<C-w>=') -- equalize size of splits
 

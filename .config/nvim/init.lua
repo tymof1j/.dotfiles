@@ -12,4 +12,5 @@ require 'tima.toggleterm'
 require 'tima.autocommands'
 require 'tima.rails_projections'
 require 'tima.nvim_transparent'
-require 'tima.neogit'
+-- require 'tima.telescope'
+-- vim.cmd("colorscheme oxocarbon")

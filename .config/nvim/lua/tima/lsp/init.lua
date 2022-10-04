@@ -5,4 +5,4 @@ end
 
 require 'tima.lsp.configs'
 require('tima.lsp.handlers').setup()
--- require 'tima.lsp.null-ls'
+require 'tima.lsp.null-ls'

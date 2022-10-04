@@ -46,6 +46,20 @@ return packer.startup(function(use)
     end
   }
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
+  -- use 'preservim/nerdtree'
+  -- use 'ryanoasis/vim-devicons'
+  -- use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'lambdalisue/fern.vim'
+  -- use {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v2.x",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --   }
+  -- }
+
   use 'akinsho/toggleterm.nvim' -- alows to open terminal windows on top of your nvim window
 
   -- cmp plugins:
@@ -80,6 +94,7 @@ return packer.startup(function(use)
   use 'xiyaowong/nvim-transparent'
   -- Color Schemas
   use 'morhetz/gruvbox'
+  use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim'
 
   -- Faster then airline
@@ -102,7 +117,6 @@ return packer.startup(function(use)
   use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
   use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
   use 'tpope/vim-fugitive' -- git integrator
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- Misha's work:
   use 'dmyTRUEk/argument-text-object'

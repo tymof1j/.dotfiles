@@ -71,7 +71,7 @@ cmp.setup {
     -- },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<cr>"] = cmp.mapping.confirm { select = true },
+    -- ["<cr>"] = cmp.mapping.confirm { select = true },
     ["<tab>"] = cmp.mapping(function(fallback)
       if luasnip.expandable() then
         luasnip.expand()
