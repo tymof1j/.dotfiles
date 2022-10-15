@@ -38,11 +38,9 @@ return packer.startup(function(use)
   -- GENERAL SETUP:
   use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
   use {
-    'phaazon/hop.nvim', -- lua analog to 'easymotion/vim-easymotion'
-    branch = 'v2', -- optional but strongly recommended
+    'ggandor/leap.nvim',
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require('leap').add_default_mappings()
     end
   }
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
@@ -128,4 +126,6 @@ return packer.startup(function(use)
 
   -- FUN:
   use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
+
+  use 'lervag/vimtex'
 end)

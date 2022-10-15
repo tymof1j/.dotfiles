@@ -27,6 +27,7 @@ vim.cmd [[
   augroup _file_run
     autocmd BufReadPost *.py nnoremap <leader>r :wa <bar> :! python3 % <cr>
     autocmd BufReadPost *.rb nnoremap <leader>r :wa <bar> :! ruby % <cr>
+  augroup end
 ]]
 
 local augroup = vim.api.nvim_create_augroup
