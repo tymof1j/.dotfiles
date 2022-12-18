@@ -99,13 +99,23 @@ return packer.startup(function(use)
   use 'morhetz/gruvbox'
   use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim'
+  use 'rebelot/kanagawa.nvim'
 
   -- Faster then airline
   use 'nvim-lualine/lualine.nvim' -- status line
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Highlighting
-  use 'nvim-treesitter/nvim-treesitter'
+  -- Highlight, edit, and navigate code
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  }
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
 
 
   -- OTHER:
