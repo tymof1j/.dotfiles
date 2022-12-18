@@ -1,6 +1,6 @@
 local options = {
   backup = false,                          -- creates a backup file
-  clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
+  -- clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   colorcolumn = '80',
   completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
@@ -28,7 +28,7 @@ local options = {
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   -- signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  -- wrap = false,                            -- display lines as one long line
+  wrap = false,                            -- display lines as one long line
   scrolloff = 10,                           -- is one of my fav
   -- sidescrolloff = 8,
   -- guifont = "monospace:h17",               -- the font used in graphical neovim applications

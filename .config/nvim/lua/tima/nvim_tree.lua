@@ -11,49 +11,26 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+  git = {
+    enable = false
+  },
   update_focused_file = {
     enable = true,
     update_cwd = true,
   },
-  renderer = {
-    group_empty = true,
-    root_folder_modifier = ":t",
-    icons = {
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          arrow_open = "",
-          arrow_closed = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
-    },
-  },
+  sort_by = "case_sensitive",
   view = {
-    width = 30,
-    side = "left",
+    adaptive_size = true,
     mappings = {
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "v", cb = tree_cb "vsplit" },
-        { key = "t", cb = tree_cb "tabnew" },
         { key = "u", action = "dir_up" },
       },
     },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
   },
 }

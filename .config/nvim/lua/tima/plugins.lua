@@ -38,15 +38,29 @@ return packer.startup(function(use)
   -- GENERAL SETUP:
   use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
   use {
-    'phaazon/hop.nvim', -- lua analog to 'easymotion/vim-easymotion'
-    branch = 'v2', -- optional but strongly recommended
+    'ggandor/leap.nvim',
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require('leap').add_default_mappings()
     end
   }
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
-  use 'akinsho/toggleterm.nvim'
+  -- use 'preservim/nerdtree'
+  -- use 'ryanoasis/vim-devicons'
+
+
+  -- use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'lambdalisue/fern.vim'
+  -- use {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v2.x",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --   }
+  -- }
+
+  use 'akinsho/toggleterm.nvim' -- alows to open terminal windows on top of your nvim window
 
   -- cmp plugins:
   use 'hrsh7th/nvim-cmp'
@@ -59,11 +73,14 @@ return packer.startup(function(use)
   -- snippets:
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
+  use 'hrsh7th/cmp-copilot'
+  use 'mattn/emmet-vim'
 
   -- LSP:
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'github/copilot.vim'
 
 
   use 'hrsh7th/cmp-cmdline'
@@ -77,13 +94,10 @@ return packer.startup(function(use)
 
   -- DESIGN:
 
-  use({
-    'catppuccin/nvim',
-    as = 'catppuccin'
-  })
-
+  use 'xiyaowong/nvim-transparent'
   -- Color Schemas
   use 'morhetz/gruvbox'
+  use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim'
 
   -- Faster then airline
@@ -111,8 +125,12 @@ return packer.startup(function(use)
   use 'dmyTRUEk/argument-text-object'
   use 'dmyTRUEk/find-and-replace'
 
+  -- ThePrimeagen work:
+  use 'ThePrimeagen/harpoon' -- inteligent makrs
+  use 'ThePrimeagen/vim-be-good' -- this is fun, game to train
 
   -- FUN:
-  use 'ThePrimeagen/vim-be-good' -- game from youtuber to train
   use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
+
+  use 'lervag/vimtex'
 end)
