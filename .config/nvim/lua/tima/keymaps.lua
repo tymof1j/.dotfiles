@@ -19,6 +19,8 @@ local function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
+vim.cmd[[let g:user_emmet_leader_key='<C-Z>']]
+
 -- imap('<c-l>', '<right>') -- this breaks the backspase key
 -- imap('<c-h>', '<left>')
 
@@ -29,6 +31,20 @@ vmap('K', ":m '<-2<CR>gv=gv")
 -- Autocentering for half page scroll
 nmap('<C-d>', '<C-d>zz')
 nmap('<C-u>', '<C-u>zz')
+
+-- Autocentering for next result of search
+nmap('n', 'nzzzv')
+nmap('N', 'Nzzzv')
+
+-- Paste from a clipboard but without changing it
+vim.keymap.set("x", "<leader>p", [["_dP]])
+-- Add remaps for saving to system clipboard
+nmap("<leader>y", [["+y]])
+vmap("<leader>y", [["+y]])
+nmap("<leader>Y", [["+Y]])
+-- Delete in normal/visual mode but without saving it to buffer
+nmap('<leader>d', [["_d]])
+vmap('<leader>d', [["_d]])
 
 nmap('<leader>w', ':w<cr>')
 nmap('<leader>md', ':MarkdownPreview<cr>') -- start MarkdownPreview

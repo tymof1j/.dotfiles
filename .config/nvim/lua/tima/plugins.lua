@@ -46,6 +46,8 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
   -- use 'preservim/nerdtree'
   -- use 'ryanoasis/vim-devicons'
+
+
   -- use 'nvim-telescope/telescope-file-browser.nvim'
   use 'lambdalisue/fern.vim'
   -- use {
@@ -71,11 +73,14 @@ return packer.startup(function(use)
   -- snippets:
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
+  use 'hrsh7th/cmp-copilot'
+  use 'mattn/emmet-vim'
 
   -- LSP:
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'github/copilot.vim'
 
 
   use 'hrsh7th/cmp-cmdline'
