@@ -21,6 +21,8 @@ end
 
 vim.cmd[[let g:user_emmet_leader_key='<C-Z>']]
 
+nmap('<leader>fo', '<cmd>Format<cr>')
+
 -- imap('<c-l>', '<right>') -- this breaks the backspase key
 -- imap('<c-h>', '<left>')
 
