@@ -103,6 +103,8 @@ return packer.startup(function(use)
 
   -- DESIGN:
 
+  -- Add indentation guides even on blank lines
+  use 'lukas-reineke/indent-blankline.nvim'
   use 'xiyaowong/nvim-transparent'
   -- Color Schemas
   use 'morhetz/gruvbox'

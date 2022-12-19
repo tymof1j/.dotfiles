@@ -25,6 +25,7 @@ vim.cmd [[
   augroup end
 
   augroup _file_run
+    autocmd filetype cpp nnoremap <leader>r :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
     autocmd BufReadPost *.py nnoremap <leader>r :wa <bar> :! python3 % <cr>
     autocmd BufReadPost *.rb nnoremap <leader>r :wa <bar> :! ruby % <cr>
   augroup end
