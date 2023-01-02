@@ -21,8 +21,6 @@ end
 
 vim.cmd[[let g:user_emmet_leader_key='<C-Z>']]
 
-nmap('<leader>fo', '<cmd>Format<cr>')
-
 -- imap('<c-l>', '<right>') -- this breaks the backspase key
 -- imap('<c-h>', '<left>')
 
@@ -68,6 +66,8 @@ nmap('<leader>gp', ':G push<cr>')
 
 
 -- for telecsope:
+nmap('<leader>fk', ':Telescope keymaps <cr>')
+nmap('<leader>fh', ':Telescope help_tags <cr>')
 nmap('<leader>ff', ':Telescope find_files <cr>')
 nmap('<leader>ft', ':Telescope live_grep <cr>')
 nmap('<leader>fb', ':Telescope buffers<cr>')
@@ -109,7 +109,9 @@ nmap('<leader>tv', ':source %<cr>') -- source vim
 nmap('<leader>tl', ':luafile %<cr>') -- source lua
 
 -- formatting
-nmap('<leader>a', ':lua vim.lsp.buf.formatting_sync()<cr>')
+nmap('<leader>fa', ':lua vim.lsp.buf.formatting_sync()<cr>')
+nmap('<leader>fo', '<cmd>Format<cr>')
+
 
 -- vim-rails:
 nmap('<leader>em', ':Emodel<cr>')

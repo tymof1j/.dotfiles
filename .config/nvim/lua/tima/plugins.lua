@@ -34,8 +34,7 @@ return packer.startup(function(use)
   -- My plugins here
   use 'wbthomason/packer.nvim'  -- packer can manage itself
 
-
-  -- GENERAL SETUP:
+  --   -- GENERAL SETUP:
   use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
   use {
     'ggandor/leap.nvim',
