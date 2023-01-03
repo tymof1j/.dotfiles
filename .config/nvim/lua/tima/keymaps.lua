@@ -70,8 +70,10 @@ nmap('<leader>fk', ':Telescope keymaps <cr>')
 nmap('<leader>fh', ':Telescope help_tags <cr>')
 nmap('<leader>ff', ':Telescope find_files <cr>')
 nmap('<leader>ft', ':Telescope live_grep <cr>')
-nmap('<leader>fb', ':Telescope buffers<cr>')
+nmap('<leader>fb', ':Telescope buffers <cr>')
 
+-- Yanking hole file
+nmap('<c-c>', ':%y+ <cr>')
 
 -- for tabs
 nmap('tn', ':tabnew<cr>')
