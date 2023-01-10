@@ -6,7 +6,7 @@ end
 comment.setup {
   toggler = {
     ---Line-comment toggle keymap
-    line = 'ne',
+    line = 'en',
   },
   opleader = {
     ---Line-comment keymap
