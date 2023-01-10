@@ -132,10 +132,9 @@ return packer.startup(function(use)
 
   use 'szw/vim-maximizer' -- toggle between fullscreen and recover
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'} -- nice render of md files. similar to github
+  use 'numToStr/Comment.nvim' -- quickly comment/uncomment files
 
   -- Tpope's work:
-  use 'tomtom/tcomment_vim' -- quickly comment/uncomment files
-  -- use 'tpope/vim-commentary' -- doesn't seem to work
   use 'tpope/vim-rails' -- useful for rails development
   use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
   use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
