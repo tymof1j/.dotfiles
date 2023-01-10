@@ -4,6 +4,14 @@ if not status_ok then
 end
 
 comment.setup {
+  toggler = {
+    ---Line-comment toggle keymap
+    line = 'ne',
+  },
+  opleader = {
+    ---Line-comment keymap
+    line = 'tt',
+  },
   pre_hook = function(ctx)
     local U = require "Comment.utils"
 
