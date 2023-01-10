@@ -80,8 +80,10 @@ return packer.startup(function(use)
 
   -- Telescope:
   use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = "nvim-lua/plenary.nvim",
+  }
   -- use 'nvim-telescope/telescope-file-browser.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
   -- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
@@ -122,7 +124,11 @@ return packer.startup(function(use)
   use 'tpope/vim-rails' -- useful for rails development
   use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
   use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
+
+  -- Git related plugins
   use 'tpope/vim-fugitive' -- git integrator
+  use 'lewis6991/gitsigns.nvim' -- adds coloring for changes on the left
+  use 'tpope/vim-rhubarb' -- enables :GBrowse from fugitive.vim to open github urls
 
   -- Misha's work:
   use 'dmyTRUEk/argument-text-object'
