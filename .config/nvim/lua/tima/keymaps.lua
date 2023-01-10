@@ -21,8 +21,7 @@ end
 
 vim.cmd[[let g:user_emmet_leader_key='<C-Z>']]
 
--- imap('<c-l>', '<right>') -- this breaks the backspase key
--- imap('<c-h>', '<left>')
+nmap('<leader>n', ':NvimTreeToggle<cr>') -- nerd tree
 
 -- Next two remaps allows to move line up and down in visual mode + autoindenting
 vmap('J', ":m '>+1<CR>gv=gv")
@@ -83,17 +82,6 @@ nmap('to', ':tabo<cr>')
 
 
 -- for spits
-nmap('<leader>n', ':NvimTreeToggle<cr>') -- nerd tree
--- nmap('<leader>n', ':NERDTreeToggle<cr>') -- nerd tree
--- vim.api.nvim_set_keymap(
---   "n",
---   "<leader>n",
---   ":Telescope file_browser<cr>",
---   { noremap = true }
--- )
-
--- nmap('<leader>n', ':Telescope file_browser<cr>') -- nerd tree
--- nmap('<leader>n', ':Fern .<cr>') -- nerd tree
 nmap('<leader>mm', ':MaximizerToggle<cr>') -- toggle maximize for split/recover
 nmap('<leader>eq', '<C-w>=') -- equalize size of splits
 
@@ -103,10 +91,7 @@ nmap('<leader>j', ':wincmd j <cr>')
 nmap('<leader>k', ':wincmd k <cr>')
 nmap('<leader>l', ':wincmd l <cr>')
 
-nmap('<leader>s', '<cmd>%s//g<Left><Left>')
--- vim.cmd[[nnoremap S :%s//g<Left><Left>]] -- lua version ⬆️  doesn't seem to work
--- nmap('S', '<Plug>(findandreplace_n)')
--- nmap('s', ':HopChar2MW<cr>') -- to see all possible commands and choose what works for you -> ':Ho', tab and scroll through the results
+nmap('<leader>s', ':%s//g<Left><Left>')
 nmap('<leader>tv', ':source %<cr>') -- source vim
 nmap('<leader>tl', ':luafile %<cr>') -- source lua
 

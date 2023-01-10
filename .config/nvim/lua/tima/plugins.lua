@@ -43,21 +43,6 @@ return packer.startup(function(use)
     end
   }
   use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
-  -- use 'preservim/nerdtree'
-  -- use 'ryanoasis/vim-devicons'
-
-
-  -- use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'lambdalisue/fern.vim'
-  -- use {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v2.x",
-  --   requires = {
-  --     "nvim-lua/plenary.nvim",
-  --     "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-  --     "MunifTanjim/nui.nvim",
-  --   }
-  -- }
 
   use 'akinsho/toggleterm.nvim' -- alows to open terminal windows on top of your nvim window
 
@@ -97,7 +82,9 @@ return packer.startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  -- use 'nvim-telescope/telescope-file-browser.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
+  -- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
 
   -- DESIGN:
@@ -106,9 +93,6 @@ return packer.startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'xiyaowong/nvim-transparent'
   -- Color Schemas
-  use 'morhetz/gruvbox'
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use 'folke/tokyonight.nvim'
   use 'rebelot/kanagawa.nvim'
 
   -- Faster then airline
@@ -142,7 +126,6 @@ return packer.startup(function(use)
 
   -- Misha's work:
   use 'dmyTRUEk/argument-text-object'
-  use 'dmyTRUEk/find-and-replace'
 
   -- ThePrimeagen work:
   use 'ThePrimeagen/harpoon' -- inteligent makrs
@@ -151,5 +134,5 @@ return packer.startup(function(use)
   -- FUN:
   use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
 
-  use 'lervag/vimtex'
+  -- use 'lervag/vimtex'
 end)
