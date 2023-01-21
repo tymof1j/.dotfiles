@@ -141,9 +141,22 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias n='nvim'
+alias cc='tmux attach -t config'
 alias stt='speedtest'
 alias la='ls -a'
 alias f='fortune | lolcat'
+
+# Mac setup for pomo
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+
 eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
