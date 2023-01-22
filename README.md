@@ -1,5 +1,22 @@
 # .dotfiles
 
+## Tmux setup:
+
+1. Go to [tpm](https://github.com/tmux-plugins/tpm/tree/59f78857f656afd462d7bc99b31cc8cc36c1872c) which stands for tmux plugin manager and install it using instruction.
+2. Copy [tmux configuration](https://github.com/tymof1j/.dotfiles/blob/main/.tmux.conf) into user directory. Alternative configuration with another status bar, which also looks nice: [bash bunni conf](https://github.com/bashbunni/dotfiles/blob/main/.tmux.conf), [oh my tmux](https://github.com/gpakosz/.tmux) which is overkill in my point of view.
+3. Make sure your previous tmux is stopped with `tmux kill-server` command. After this you can open new tmux session with `tmux new` and then run `nvim .tmux.conf`.
+4. Prefix+I, which should be `<C-a>I`. This should install plugins using tpm.
+5. Exit nvim with `ZZ` and run `tmux source ~/.tmux.conf` which should apply installed plugins.
+
+### Basic commands:
+- `prefix ,` - rename window
+- `prefix c` - create new window
+- `prefix x` - close window
+- `prefix d` - detach
+- `prefix f` - search by window or session names. Make sure you have [ripgrep](https://github.com/BurntSushi/ripgrep) installed because it's used for this.
+- `prefix n` - open next window
+- `prefix p` - open previous window
+
 ## NVIM
 `:messages` can be useful to debug when ever your config failes
 
