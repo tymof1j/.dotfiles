@@ -82,7 +82,7 @@ telescope.setup {
       theme = "dropdown"
     },
     find_files = {
-      hidden = true,
+      -- hidden = true,
       theme = "ivy",
     },
     live_grep = {

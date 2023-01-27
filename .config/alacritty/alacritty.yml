@@ -83,7 +83,7 @@ cursor:
   unfocused_hollow: true
 
 key_bindings:
-  - { key: Y, mods: Control,  command: AcceptLine }
+  # - { key: Y, mods: Control,  command: AcceptLine }
   - { key: N, mods: Command,         action: SpawnNewInstance    }
   - { key: Q, mods: Command,         action: Quit                }
   - { key: W, mods: Command,         action: Quit                }

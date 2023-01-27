@@ -139,6 +139,7 @@ return packer.startup(function(use)
 
   -- FUN:
   use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
+  use 'Eandrju/cellular-automaton.nvim'
 
-  -- use 'lervag/vimtex'
+  use 'lervag/vimtex'
 end)

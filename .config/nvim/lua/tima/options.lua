@@ -40,4 +40,5 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- vim.opt.fillchars = {eob = ' '}
 -- vim.cmd 'autocmd VimEnter * set formatoptions-=ro' -- desables auto commenting on the next line
