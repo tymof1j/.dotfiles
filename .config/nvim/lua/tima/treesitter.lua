@@ -23,7 +23,8 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = "all",
 
   highlight = { enable = true },
-  indent = { enable = true },
+  -- indent = { enable = false, disable = { "python", "css" } },
+  indent = { enable = false },
   incremental_selection = {
     enable = true,
     keymaps = {
