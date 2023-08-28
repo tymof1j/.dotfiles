@@ -31,6 +31,10 @@ end
 
 -- Install your plugins here
 return packer.startup(function(use)
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  }
   -- My plugins here
   use 'wbthomason/packer.nvim'  -- packer can manage itself
 
@@ -131,7 +135,7 @@ return packer.startup(function(use)
   use 'tpope/vim-rhubarb' -- enables :GBrowse from fugitive.vim to open github urls
 
   -- Misha's work:
-  use 'dmyTRUEk/argument-text-object'
+  -- use 'dmyTRUEk/argument-text-object'
 
   -- ThePrimeagen work:
   use 'ThePrimeagen/harpoon' -- inteligent makrs
