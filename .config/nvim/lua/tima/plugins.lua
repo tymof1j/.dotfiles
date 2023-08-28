@@ -1,149 +1,145 @@
-local fn = vim.fn
+-- local fn = vim.fn
 
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-  print("Installing packer close and reopen Neovim...")
-  vim.cmd([[packadd packer.nvim]])
+-- Automatically install lazy.nvim if it doesn't exist
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  }
 end
+vim.opt.rtp:prepend(lazypath)
+
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
+  augroup packer_r_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | Lazy
   augroup end
 ]])
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
 end
 
 -- Install your plugins here
-return packer.startup(function(use)
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  }
+require('lazy').setup({
+  --  {
+  --   'glacambre/firenvim',
+  --   run = function() vim.fn['firenvim#install'](0) end
+  -- }
   -- My plugins here
-  use 'wbthomason/packer.nvim'  -- packer can manage itself
 
   --   -- GENERAL SETUP:
-  use 'windwp/nvim-autopairs' -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
-  use {
+   'windwp/nvim-autopairs', -- autopairs, integrates with both cmp and treesitter, analog to 'windwp/nvim-autopairs'
+   {
     'ggandor/leap.nvim',
     config = function()
       require('leap').add_default_mappings()
     end
-  }
-  use 'kyazdani42/nvim-tree.lua' -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
+  },
+   'kyazdani42/nvim-tree.lua', -- file manager inside vim (default on left side), analog to 'scrooloose/nerdtree'
 
-  use 'akinsho/toggleterm.nvim' -- alows to open terminal windows on top of your nvim window
+   'akinsho/toggleterm.nvim', -- alows to open terminal windows on top of your nvim window
 
   -- cmp plugins:
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
+   'hrsh7th/nvim-cmp',
+   'hrsh7th/cmp-buffer',
+   'hrsh7th/cmp-path',
+   'saadparwaiz1/cmp_luasnip',
+   'hrsh7th/cmp-nvim-lsp',
+   'hrsh7th/cmp-nvim-lua',
 
   -- snippets:
-  use 'L3MON4D3/LuaSnip'
-  use 'rafamadriz/friendly-snippets'
-  use 'hrsh7th/cmp-copilot'
-  use 'mattn/emmet-vim'
+   'L3MON4D3/LuaSnip',
+   'rafamadriz/friendly-snippets',
+   'hrsh7th/cmp-copilot',
+   'mattn/emmet-vim',
 
   -- LSP:
-  use { -- LSP Configuration & Plugins
+   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
+      -- ful status updates for LSP
       'j-hui/fidget.nvim',
     },
-  }
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'github/copilot.vim'
+  },
+   'jose-elias-alvarez/null-ls.nvim',
+   'github/copilot.vim',
 
 
-  use 'hrsh7th/cmp-cmdline'
+   'hrsh7th/cmp-cmdline',
 
   -- Telescope:
-  use 'nvim-lua/popup.nvim'
-  use {
+   'nvim-lua/popup.nvim',
+   {
     'nvim-telescope/telescope.nvim',
     requires = "nvim-lua/plenary.nvim",
-  }
-  -- use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'nvim-telescope/telescope-fzy-native.nvim'
-  -- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+  },
+  --  'nvim-telescope/telescope-file-browser.nvim'
+   'nvim-telescope/telescope-fzy-native.nvim',
+  --  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
 
   -- DESIGN:
 
   -- Add indentation guides even on blank lines
-  use 'lukas-reineke/indent-blankline.nvim'
-  use 'xiyaowong/nvim-transparent'
+   'lukas-reineke/indent-blankline.nvim',
+   'xiyaowong/nvim-transparent',
   -- Color Schemas
-  use 'rebelot/kanagawa.nvim'
+   'rebelot/kanagawa.nvim',
 
   -- Faster then airline
-  use 'nvim-lualine/lualine.nvim' -- status line
-  use 'kyazdani42/nvim-web-devicons'
+   'nvim-lualine/lualine.nvim', -- status line
+   'kyazdani42/nvim-web-devicons',
 
   -- Highlight, edit, and navigate code
-  use {
+   {
     'nvim-treesitter/nvim-treesitter',
     run = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
-  }
-  use { -- Additional text objects via treesitter
+  },
+   { -- Additional text objects via treesitter
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
-  }
+  },
 
 
   -- OTHER:
 
-  use 'szw/vim-maximizer' -- toggle between fullscreen and recover
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'} -- nice render of md files. similar to github
-  use 'numToStr/Comment.nvim' -- quickly comment/uncomment files
+   'szw/vim-maximizer', -- toggle between fullscreen and recover
+   {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}, -- nice render of md files. similar to github
+   'numToStr/Comment.nvim', -- quickly comment/uncomment files
 
   -- Tpope's work:
-  use 'tpope/vim-rails' -- useful for rails development
-  use 'tpope/vim-surround' -- allows to change/add/delete quotes comfy
-  use 'tpope/vim-repeat' -- lets use . on plugins operation/complex operations
+   'tpope/vim-rails', -- useful for rails development
+   'tpope/vim-surround', -- allows to change/add/delete quotes comfy
+   'tpope/vim-repeat', -- lets use . on plugins operation/complex operations
 
   -- Git related plugins
-  use 'tpope/vim-fugitive' -- git integrator
-  use 'lewis6991/gitsigns.nvim' -- adds coloring for changes on the left
-  use 'tpope/vim-rhubarb' -- enables :GBrowse from fugitive.vim to open github urls
+   'tpope/vim-fugitive', -- git integrator
+   'lewis6991/gitsigns.nvim', -- adds coloring for changes on the left
+   'tpope/vim-rhubarb', -- enables :GBrowse from fugitive.vim to open github urls
 
   -- Misha's work:
-  -- use 'dmyTRUEk/argument-text-object'
+  --  'dmyTRUEk/argument-text-object'
 
   -- ThePrimeagen work:
-  use 'ThePrimeagen/harpoon' -- inteligent makrs
-  use 'ThePrimeagen/vim-be-good' -- this is fun, game to train
+   'ThePrimeagen/harpoon', -- inteligent makrs
+   'ThePrimeagen/vim-be-good', -- this is fun, game to train
 
   -- FUN:
-  use 'dstein64/vim-startuptime' -- allows to check your startup time using :StartupTime command
-  use 'Eandrju/cellular-automaton.nvim'
+   'dstein64/vim-startuptime', -- allows to check your startup time using :StartupTime command
+   'Eandrju/cellular-automaton.nvim',
 
-  use 'lervag/vimtex'
-end)
+   'lervag/vimtex'
+})
+require('luasnip.loaders.from_vscode').lazy_load()
+
